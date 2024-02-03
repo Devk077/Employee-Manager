@@ -1,0 +1,21 @@
+<!-- BEGIN: /c:/Users/HP/OneDrive/Desktop/course/DJANGO_COURSE_2.xx/Mera Django/emp_management_system/emp_app/templates/emp_app/delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- FILEPATH: /c:/Users/HP/OneDrive/Desktop/course/DJANGO_COURSE_2.xx/Mera Django/emp_management_system/emp_app/templates/emp_app/delete.html -->
+    <!-- BEGIN: bootstrap_css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- END: bootstrap_css -->
+</head>
+<body>
+    <h1>Delete Employee</h1>
+    <p>Are you sure you want to delete this employee?</p>
+    <form action="{% url 'emp_app:delete' employee.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <p class="btn btn-primary"><a href="{% url 'emp_app:employee_details' pk=employee.pk %}">cancel</a></p>
+        
+    </form>
+</body>
+</html>
+<!-- END: /c:/Users/HP/OneDrive/Desktop/course/DJANGO_COURSE_2.xx/Mera Django/emp_management_system/emp_app/templates/emp_app/delete.html -->

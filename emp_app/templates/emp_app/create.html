@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="jumbotron">    
+        <h1>
+            {% if not employee.form.instance %}
+                Create Employee 
+            {% else %}
+                Update Employee
+            {% endif %}
+        </h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Save">
+    </div>
+
+{% endblock %}

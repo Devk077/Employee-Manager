@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+        
+        <div class="jumbotron">    
+            <h1>Welcome to Employee List!</h1>
+
+                <ul>
+                    {% for emp in employee_list %}
+                       <a href="{{ emp.pk }}"><li>{{ emp.ename }}</li></a> 
+                    {% endfor %}
+                </ul>
+            </div>
+            <p><a class="btn btn-primary" href="{% url 'emp_app:create' %}">Add New Employee</a></p>        
+ 
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">    
+    <h1>Employee Details</h1>
+    <p>Name: {{ employee.ename }}</p>
+    <p>Email: {{ employee.eemail }}</p>
+    <p>Contact: {{ employee.econtact }}</p>
+    <p>Department: {{ employee.edept.dname }}</p>
+    <p>Location: {{employee.edept.dlocation}}</p>
+
+
+    <span><a class="btn btn-warning" href="{% url 'emp_app:update' pk=employee.pk %}">update employee</a></span>
+    <span><a class="btn btn-danger" href="{% url 'emp_app:delete' pk=employee.pk %}">delete employee</a></span>
+</div>
+
+
+
+{% endblock %}
